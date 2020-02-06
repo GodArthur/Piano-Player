@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="CircularArray.cs" />
     <Compile Include="IMusicalInstrument.cs" />
     <Compile Include="IRingBuffer.cs" />
     <Compile Include="KeyboardPiano.cs" />
