@@ -21,8 +21,7 @@ namespace PianoPlayer
             double value;
             if (buffer.Front != 0)
             {
-                value = (buffer[buffer.Front] + buffer[buffer.Front + 1]) * decay;
-                
+                value = (buffer[buffer.Front] + buffer[buffer.Front + 1]) * decay; 
             }
             else
             {
@@ -33,24 +32,16 @@ namespace PianoPlayer
 
         public void Strike()
         {
+
+
+
             //temporary array to store the random values
             double[] temp = new double[buffer.Length];
 
             for (int i = 0; i < buffer.Length; i++)
             {
-                Random rand = new Random();
-                int sign = rand.Next(0, 1);
 
-                double generatedNumber = RandomNumber(-0.5, 0.5);
-
-                if (sign == 1)
-                {
-                    temp[i] = generatedNumber * -1;
-                }
-                else
-                {
-                    temp[i] = generatedNumber;
-                }
+                temp[i] = RandomNumber(-0.5, 0.5);
             }
 
             buffer.Fill(temp);
@@ -59,7 +50,7 @@ namespace PianoPlayer
         private double RandomNumber(double min, double max)
         {
             Random number = new Random();
-            return number.NextDouble();
+            return number.NextDouble() * (max - min) + max;
         }
     }
 }

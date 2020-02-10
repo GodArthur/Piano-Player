@@ -54,6 +54,7 @@
     <Compile Include="IMusicalInstrument.cs" />
     <Compile Include="IRingBuffer.cs" />
     <Compile Include="KeyboardPiano.cs" />
+    <Compile Include="Piano.cs" />
     <Compile Include="PianoWire.cs" />
     <Compile Include="PlayerPiano.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

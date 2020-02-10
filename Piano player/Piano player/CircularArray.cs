@@ -22,7 +22,7 @@ namespace PianoPlayer
         public CircularArray(int length)
         {
             buffer = new double[length];
-            Front = -1;
+            Front = 0;
             Length = length;
         }
 
