@@ -13,7 +13,11 @@ namespace PianoPlayer
         double[] buffer;
 
         public int Length { get; }
-        public int front { get; private set; }
+
+        int front;
+        int end;
+        int tail;
+
 
 
         public CircularArray(int length)
@@ -21,6 +25,7 @@ namespace PianoPlayer
             buffer = new double[length];
             front = 0;
             Length = length;
+            tail = head;
         }
 
         public double this[int index] => throw new NotImplementedException();
