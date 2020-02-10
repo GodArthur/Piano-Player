@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0223793D-3A99-4CED-BD66-B5840DFEE35E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Piano_player</RootNamespace>
     <AssemblyName>Piano player</AssemblyName>
@@ -30,6 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PianoPlayer.KeyboardPiano</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
@@ -47,10 +50,12 @@
   <ItemGroup>
     <Compile Include="Audio.cs" />
     <Compile Include="CircularArray.cs" />
+    <Compile Include="Piano.cs" />
     <Compile Include="IMusicalInstrument.cs" />
     <Compile Include="IRingBuffer.cs" />
     <Compile Include="KeyboardPiano.cs" />
     <Compile Include="PianoWire.cs" />
+    <Compile Include="PlayerPiano.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
