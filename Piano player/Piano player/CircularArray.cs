@@ -12,23 +12,24 @@ namespace PianoPlayer
 
         double[] buffer;
 
-        public int Length { get; }
+        public int Length { get; }        
 
-        int front;
-        int end;
-        int tail;
+        public int Front { get; private set; }     
+        
 
 
 
         public CircularArray(int length)
         {
             buffer = new double[length];
-            front = 0;
+            Front = -1;
             Length = length;
-            tail = head;
         }
 
-        public double this[int index] => throw new NotImplementedException();
+        public double this[int index]
+        {
+            get { return buffer[index]; }
+        }
 
         public void Fill(double[] array)
         {
@@ -45,7 +46,12 @@ namespace PianoPlayer
 
         public double Shift(double value)
         {
-            throw new NotImplementedException();
+            double first = buffer[Front];
+
+            buffer[Front] = -1;
+            Front++;
+
+            return first;
         }
     }
 }
