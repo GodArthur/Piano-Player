@@ -33,7 +33,33 @@ namespace PianoPlayer
 
         public void Strike()
         {
-            throw new NotImplementedException();
+            //temporary array to store the random values
+            double[] temp = new double[buffer.Length];
+
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                Random rand = new Random();
+                int sign = rand.Next(0, 1);
+
+                double generatedNumber = RandomNumber(-0.5, 0.5);
+
+                if (sign == 1)
+                {
+                    temp[i] = generatedNumber * -1;
+                }
+                else
+                {
+                    temp[i] = generatedNumber;
+                }
+            }
+
+            buffer.Fill(temp);
+        }
+
+        private double RandomNumber(double min, double max)
+        {
+            Random number = new Random();
+            return number.NextDouble();
         }
     }
 }
