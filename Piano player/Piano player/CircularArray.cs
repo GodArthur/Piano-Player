@@ -48,8 +48,19 @@ namespace PianoPlayer
         {
             double first = buffer[Front];
 
-            buffer[Front] = -1;
-            Front++;
+            buffer[Front] = value;
+
+            //buffer[Front] = -1;
+
+            if (Front == Length - 1)
+            {
+                Front = 0;
+            }
+            else
+            {
+                Front++;
+            }
+           
 
             return first;
         }
