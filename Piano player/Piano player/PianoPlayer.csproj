@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>PianoPlayer.KeyboardPiano</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -50,10 +50,12 @@
   <ItemGroup>
     <Compile Include="Audio.cs" />
     <Compile Include="CircularArray.cs" />
+    <Compile Include="Piano.cs" />
     <Compile Include="IMusicalInstrument.cs" />
     <Compile Include="IRingBuffer.cs" />
     <Compile Include="KeyboardPiano.cs" />
     <Compile Include="PianoWire.cs" />
+    <Compile Include="PlayerPiano.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
