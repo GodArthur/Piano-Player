@@ -12,7 +12,7 @@ namespace PianoPlayer
         private List<IMusicalInstrument> allKeys;
         private String keys;
 
-        public Piano(string keys = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ", int samplingRate = 44100)
+        public Piano(string keys, int samplingRate)
         {
             this.keys = keys;
             this.allKeys = new List<IMusicalInstrument>();
