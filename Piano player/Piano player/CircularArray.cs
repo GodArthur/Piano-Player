@@ -11,20 +11,31 @@ namespace PianoPlayer
     {
 
         double[] buffer;
-        int buffPosition;
+
+        public int Length { get; }
+        public int front { get; private set; }
+
+
         public CircularArray(int length)
         {
             buffer = new double[length];
-            buffPosition = 0;
+            front = 0;
+            Length = length;
         }
 
         public double this[int index] => throw new NotImplementedException();
 
-        public int Length => throw new NotImplementedException();
-
         public void Fill(double[] array)
         {
-            throw new NotImplementedException();
+            double[] temp = new double[array.Length];
+            
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = temp[i];
+            }
+
+            buffer = temp;
+
         }
 
         public double Shift(double value)
