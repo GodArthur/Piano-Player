@@ -18,8 +18,17 @@ namespace PianoPlayer
 
         public double Sample(double decay)
         {
-            double value = (buffer[buffer.Front] + buffer[buffer.Front + 1] * decay);
-            return buffer.Shift(decay);
+            double value;
+            if (buffer.Front != 0)
+            {
+                value = (buffer[buffer.Front] + buffer[buffer.Front + 1]) * decay;
+                
+            }
+            else
+            {
+                value = (buffer[buffer.Front] + buffer[0]) * decay;
+            }
+            return buffer.Shift(value);
         }
 
         public void Strike()
