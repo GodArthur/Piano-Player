@@ -7,8 +7,8 @@
     <ProjectGuid>{0223793D-3A99-4CED-BD66-B5840DFEE35E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Piano_player</RootNamespace>
-    <AssemblyName>Piano player</AssemblyName>
+    <RootNamespace>PianoPlayer</RootNamespace>
+    <AssemblyName>PianoPlayer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
