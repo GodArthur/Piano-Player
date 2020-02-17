@@ -14,13 +14,19 @@ namespace PianoPlayer
 
         public int Length { get; }        
 
-        public int Front { get; private set; }     
-        
+        public int Front { get; private set; }
+
 
 
 
         public CircularArray(int length)
         {
+            
+            if (length < 1)
+            {
+                throw new NotSupportedException("The value " + Length + "is not supported. Choose a number greater than zero");
+            }
+             
             buffer = new double[length];
             Front = 0;
             Length = length;
@@ -88,17 +94,3 @@ namespace PianoPlayer
         }
     }
 }
-/*
- *   get
-            {
-                if (index + Front > Length - 1)
-                {
-                    return buffer[(index + Front) - Length];
-                }
-                else
-                {
-                    return buffer[(index + Front)];
-                }
-
-            }
-*/
