@@ -42,9 +42,9 @@ namespace PianoPlayer
                     }
                     //Console.Read();
                 }
-                Thread.Sleep(400); //delay
+                Thread.Sleep(300); //delay
 
-                //Console.Read();
+                
             }
 
         }

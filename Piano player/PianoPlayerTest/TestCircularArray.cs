@@ -13,13 +13,24 @@ namespace PianoPlayerTest
     [TestClass]
     public class TestCircularArray
     {
-
+        //Tests if the Constructor initializes the object
         [TestMethod]
         public void ConstructorTest()
         {
-
             CircularArray circle = new CircularArray(5);
             Assert.AreEqual(5, circle.Length);
+        }
+
+
+        /// <summary>
+        /// Tests if the Constructor takes in a value less than one
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(NotSupportedException))]
+        public void ConstructorTestInvalid()
+        {
+
+            CircularArray circle = new CircularArray(-5);
         }
 
         [TestMethod]
@@ -60,6 +71,7 @@ namespace PianoPlayerTest
             CollectionAssert.AreEqual(array, temp);
         }
 
+
         [TestMethod]
         public void TestShift()
         {
@@ -75,7 +87,7 @@ namespace PianoPlayerTest
             buffer.Shift(5);
             buffer.Shift(6);
 
-            Assert.AreEqual("56", buffer[0] + "" + buffer[1], true);
+            Assert.AreEqual("65", buffer[buffer.Length - 1] + "" + buffer[buffer.Length - 2], true);
         }
 
 
@@ -101,7 +113,7 @@ namespace PianoPlayerTest
             buffer.Shift(9);
 
             //Checking the new first and last position
-            Assert.AreEqual("98", buffer[0] + "" + buffer[buffer.Length - 1], true);
+            Assert.AreEqual("69", buffer[0] + "" + buffer[buffer.Length - 1], true);
         }
 
         [TestMethod]
@@ -118,8 +130,9 @@ namespace PianoPlayerTest
             //shifting the array positions (replacing 1 and 2)
             buffer.Shift(5);
             buffer.Shift(6);
+            
 
-            Assert.AreEqual(3, buffer[buffer.Front]);
+            Assert.AreEqual(3, buffer[0]);
 
         }
 
