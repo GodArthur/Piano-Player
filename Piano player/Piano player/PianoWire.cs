@@ -6,51 +6,60 @@ using System.Threading.Tasks;
 
 namespace PianoPlayer
 {
-    class PianoWire : IMusicalInstrument
+    public class PianoWire : IMusicalInstrument
     {
 
-        private CircularArray buffer;
+        public CircularArray buffer { get; private set; }
 
         public PianoWire(int frequency, int samplingRate)
         {
-            buffer = new CircularArray(frequency / samplingRate);
+            buffer = new CircularArray(samplingRate / frequency);
         }
+
+
 
         public double Sample(double decay)
         {
+            //value being added to the buffer
             double value;
-            if (buffer.Front != 0)
-            {
-                value = (buffer[buffer.Front] + buffer[buffer.Front + 1]) * decay; 
-            }
-            else
-            {
-                value = (buffer[buffer.Front] + buffer[0]) * decay;
-            }
+            
+            value = ((buffer[0] + buffer[1]) / 2) * decay; 
+            
             return buffer.Shift(value);
         }
 
         public void Strike()
         {
-
-
-
+            Random number = new Random();
             //temporary array to store the random values
             double[] temp = new double[buffer.Length];
 
-            for (int i = 0; i < buffer.Length; i++)
+            for (int i = 0; i < temp.Length; i++)
             {
 
-                temp[i] = RandomNumber(-0.5, 0.5);
+                temp[i] = RandomNumber(number, -0.5, 0.5);
             }
 
             buffer.Fill(temp);
         }
 
-        private double RandomNumber(double min, double max)
+        public static double RandomNumber(Random number, double min, double max)
         {
-            Random number = new Random();
-            return number.NextDouble() * (max - min) + max;
+            
+            return number.NextDouble() * (max - min) + min;
+        }
+
+        /// <summary>
+        /// method gets the embedded circular array
+        /// </summary>
+        /// <returns>a deep copy of the buffer</returns>
+        public CircularArray getWires()
+        {
+            CircularArray temp = new CircularArray(buffer.Length);
+
+            temp.Fill(buffer.getValues());
+
+            return temp;
         }
     }
 }

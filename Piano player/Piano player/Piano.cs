@@ -10,7 +10,7 @@ namespace PianoPlayer
     {
 
         private List<IMusicalInstrument> allKeys;
-        private String keys;
+        private string keys;
 
         public Piano(string keys, int samplingRate)
         {

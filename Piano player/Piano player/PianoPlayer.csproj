@@ -7,8 +7,8 @@
     <ProjectGuid>{0223793D-3A99-4CED-BD66-B5840DFEE35E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Piano_player</RootNamespace>
-    <AssemblyName>Piano player</AssemblyName>
+    <RootNamespace>PianoPlayer</RootNamespace>
+    <AssemblyName>PianoPlayer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>PianoPlayer.KeyboardPiano</StartupObject>
+    <StartupObject>PianoPlayer.PlayerPiano</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="Audio.cs" />
     <Compile Include="CircularArray.cs" />
-    <Compile Include="Piano.cs" />
     <Compile Include="IMusicalInstrument.cs" />
     <Compile Include="IRingBuffer.cs" />
     <Compile Include="KeyboardPiano.cs" />
