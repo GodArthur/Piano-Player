@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Author: Korjon Chang-Jones
+//1837302
+//2020-02-17
 namespace PianoPlayer
 {
     public class CircularArray : IRingBuffer
@@ -67,7 +70,7 @@ namespace PianoPlayer
 
             buffer[Front] = value;
 
-            //buffer[Front] = -1;
+            
 
             if (Front == Length - 1)
             {
@@ -82,6 +85,15 @@ namespace PianoPlayer
             return first;
         }
 
+        /// <summary>
+        /// Method gets values of the internal buffer array
+        /// </summary>
+        /// <remarks>
+        /// creates a deep copy before sending the values
+        /// </remarks>
+        /// <returns>
+        /// a Copy of the buffer array
+        /// </returns>
         public double[] getValues()
         {
             double[] temp = new double[buffer.Length];

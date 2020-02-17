@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Author: Korjon Chang-Jones
+//1837302
+//2020-02-17
 namespace PianoPlayer
 {
     public class PianoWire : IMusicalInstrument

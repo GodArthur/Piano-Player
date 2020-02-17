@@ -2,6 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PianoPlayer;
 
+//Author: Korjon Chang-Jones
+//1837302
+//2020-02-17
 namespace PianoPlayerTest
 {
     [TestClass]

@@ -2,6 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PianoPlayer;
 
+//Author: Korjon Chang-Jones
+//1837302
+//2020-02-17
 namespace PianoPlayerTest
 {
     /// <summary>
@@ -83,7 +86,7 @@ namespace PianoPlayerTest
             //filling up the buffer
             buffer.Fill(array);
 
-            //shifting the array positions (replacing 1 and 2)
+            //shifting the array positions (replacing 0 and 1)
             buffer.Shift(5);
             buffer.Shift(6);
 
@@ -116,6 +119,9 @@ namespace PianoPlayerTest
             Assert.AreEqual("69", buffer[0] + "" + buffer[buffer.Length - 1], true);
         }
 
+        /// <summary>
+        /// Testing if the front property points to the proper index
+        /// </summary>
         [TestMethod]
         public void TestFront()
         {
