@@ -37,7 +37,7 @@ namespace PianoPlayer
             
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = temp[i];
+                temp[i] = array[i];
             }
 
             buffer = temp;
@@ -63,6 +63,17 @@ namespace PianoPlayer
            
 
             return first;
+        }
+
+        public double[] getValues()
+        {
+            double[] temp = new double[buffer.Length];
+
+            for (int i = 0; i < temp.Length; i++)
+            {
+                temp[i] = buffer[i];
+            }
+            return temp;
         }
     }
 }
