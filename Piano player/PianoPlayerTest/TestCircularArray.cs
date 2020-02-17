@@ -7,8 +7,9 @@ namespace PianoPlayerTest
     public class TestCircularArray
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestFill()
         {
+            double temp = new double
         }
     }
 }
