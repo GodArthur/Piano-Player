@@ -18,27 +18,35 @@ namespace PianoPlayer
             string[] allData = File.ReadAllLines("chopsticks.txt");
             string keys = allData[0];
             Piano piano = new Piano(keys, 44100);
-            int count = 0;
-            while (true)
+            int count;
+            
+            for (int i = 1; i < allData.Length; i++)
             {
-                for (int i = 1; i < allData.Length; i++)
+                string line = allData[i];
+                for (int j = 0; j < line.Length; j++)
                 {
-                    string line = allData[i];
-                    for (int j = 0; j < line.Length; j++)
-                    {
-                        Console.WriteLine(line);
-                        piano.StrikeKey(line[j]);
+                    //Console.WriteLine(line[j]);
+                    piano.StrikeKey(line[j]);
 
+                    count = 1;
+                    //player.Play(piano.Play());
+                    while(count != 0)
+                    {
                         player.Play(piano.Play());
                         count++; //count number of samples
                         if (count > 44100 * 3)
                         {
                             count = 0;
-                            Thread.Sleep(400); //delay
+
                         }
                     }
+                    //Console.Read();
                 }
+                Thread.Sleep(400); //delay
+
+                //Console.Read();
             }
+
         }
     }
 }

@@ -32,7 +32,9 @@ namespace PianoPlayerTest
 
             //filling up the circle
             circle.Fill(array);
-            Assert.AreEqual(3.0, circle[2]);
+            circle.Shift(6);
+            circle.Shift(5);
+            Assert.AreEqual(6, circle[2]);
         }
 
         [TestMethod]
@@ -78,6 +80,7 @@ namespace PianoPlayerTest
 
 
         [TestMethod]
+
         //Testing if the queue doesn't go out of bounds when shifting
         //and circles back to the beginning
         public void TestShiftFullCircle()
@@ -117,6 +120,7 @@ namespace PianoPlayerTest
             buffer.Shift(6);
 
             Assert.AreEqual(3, buffer[buffer.Front]);
+
         }
 
     }

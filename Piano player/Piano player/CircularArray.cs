@@ -28,7 +28,18 @@ namespace PianoPlayer
 
         public double this[int index]
         {
-            get { return buffer[index]; }
+            get
+            {
+                if (index + Front > Length - 1)
+                {
+                    return buffer[(index + Front) - Length];
+                }
+                else
+                {
+                    return buffer[(index + Front)];
+                }
+
+            }
         }
 
         public void Fill(double[] array)
@@ -77,3 +88,17 @@ namespace PianoPlayer
         }
     }
 }
+/*
+ *   get
+            {
+                if (index + Front > Length - 1)
+                {
+                    return buffer[(index + Front) - Length];
+                }
+                else
+                {
+                    return buffer[(index + Front)];
+                }
+
+            }
+*/

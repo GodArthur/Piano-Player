@@ -76,7 +76,7 @@ namespace PianoPlayerTest
 
             double decay = 3;
             
-            //adding new value to qeue
+            //adding new value to queue
             pw.Sample(decay);
 
             //Storing the new value of the array
@@ -84,7 +84,7 @@ namespace PianoPlayerTest
 
             double[] afterSample = buffer2.getValues();
 
-            double value = (beforeSample[0] + beforeSample[1]) * decay;
+            double value = ((beforeSample[0] + beforeSample[1]) / 2) * decay;
             Assert.AreEqual(value, afterSample[0]);
 
         }

@@ -16,21 +16,15 @@ namespace PianoPlayer
             buffer = new CircularArray(samplingRate / frequency);
         }
 
+
+
         public double Sample(double decay)
         {
             //value being added to the buffer
             double value;
-
-            //Check if the front is pointing to the last value in the array
-            if (buffer.Front != (buffer.Length - 1))
-            {
-                value = (buffer[buffer.Front] + buffer[buffer.Front + 1]) * decay; 
-            }
-            else
-            {
-                value = (buffer[buffer.Front] + buffer[0]) * decay;
-            }
-
+            
+            value = ((buffer[0] + buffer[1]) / 2) * decay; 
+            
             return buffer.Shift(value);
         }
 
