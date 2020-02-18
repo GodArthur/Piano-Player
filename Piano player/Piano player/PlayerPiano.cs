@@ -34,10 +34,17 @@ namespace PianoPlayer
             {
                 //For goes through each character in the line
                 string line = allData[i];
-                for (int j = 0; j < line.Length; j++)
-                {
+                int j = 0;
+                
                     //StrikeKey is called
                     piano.StrikeKey(line[j]);
+                    if (line.Length > 1)
+                    {
+                        if (line.Length > 1)
+                        {
+                            piano.StrikeKey(line[j + 1]);
+                        }
+                    }
 
                     count = 1;
                     //While loop makes sure there are enough samples to play the note
@@ -52,7 +59,7 @@ namespace PianoPlayer
                         }
                     }
                     //Console.Read();
-                }
+                
                 Thread.Sleep(400); //delay
 
                 
