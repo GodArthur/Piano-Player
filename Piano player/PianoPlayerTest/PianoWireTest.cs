@@ -62,7 +62,9 @@ namespace PianoPlayerTest
         }
 
 
-
+        /// <summary>
+        /// Testing the Sample method
+        /// </summary>
         [TestMethod]
         public void SampleTest()
         {
