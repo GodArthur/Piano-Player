@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PianoTest.cs" />
     <Compile Include="TestCircularArray.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PianoWireTest.cs" />
