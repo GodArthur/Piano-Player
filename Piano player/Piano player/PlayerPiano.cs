@@ -52,7 +52,7 @@ namespace PianoPlayer
                     {
                         player.Play(piano.Play());
                         count++; //count number of samples
-                        if (count > 44100 * 3)
+                        if (count > 44100 * 1)
                         {
                             count = 0;
 
