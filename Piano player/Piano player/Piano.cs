@@ -25,7 +25,7 @@ namespace PianoPlayer
 
             //This for loop goes through each of the keys and performs a mathematical calculation to find the frequency
             //Of that note and create a PianoWire object of that note
-            for(int i = 1; i < this.keys.Length; i++)
+            for(int i = 0; i < this.keys.Length; i++)
             {
                 int frequency = 0;
                 double power = 0;

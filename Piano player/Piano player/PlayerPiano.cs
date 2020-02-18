@@ -30,7 +30,7 @@ namespace PianoPlayer
             int count;
             
             //For goes through all lines after key mapping
-            for (int i = 0; i < allData.Length; i++)
+            for (int i = 1; i < allData.Length; i++)
             {
                 //For goes through each character in the line
                 string line = allData[i];
