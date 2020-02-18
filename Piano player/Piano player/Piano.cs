@@ -10,7 +10,7 @@ namespace PianoPlayer
     //1842644  
     //2020-02-17
     //This class represents the Piano object that uses the pianoWires to create a piano capable of playing different notes
-    class Piano
+    public class Piano
     {
         //Declaring the list of PianoWires (essentially) and the keys that will be used
         private List<IMusicalInstrument> allKeys;
