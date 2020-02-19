@@ -12,6 +12,33 @@ namespace PianoPlayerTest
     [TestClass]
     public class PianoTest
     {
+        /// <summary>
+        /// Testing to make sure that the StrikeKey method actually creates samples for a key
+        /// </summary>
+        /// <remarks>
+        /// The chance that the first sample is 0 is extremely low, so I'm pretty sure this is sufficient
+        /// </remarks>
+        [TestMethod]
+        public void StrikeTest()
+        {
+            Piano testPiano = new Piano("q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ", 44100);
+            testPiano.StrikeKey('q');
+            PianoWire testWire = (PianoWire)testPiano.returnKeyAtIndex('q');
+            Assert.AreNotEqual(0, testWire.getWires()[0]);
+        }
+
+        /// <summary>
+        /// Testing the Play() method with no keys struck
+        /// </summary>
+        /// <remarks>
+        /// Testing if the output of Play is 0 if no keys are struck
+        /// </remarks>
+        [TestMethod]
+        public void PlayNoNotesTest()
+        {
+            Piano testPiano = new Piano("q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ", 44100);
+            Assert.AreEqual(0, testPiano.Play());
+        }
 
         /// <summary>
         /// Testing the Play() method
